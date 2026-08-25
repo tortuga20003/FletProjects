@@ -16,6 +16,7 @@ IDX = 0
 def main(page: ft.Page):
 
     # ---- configurações da página
+
     # editar a título da janela/aba do navegador/nome do app
     page.title = "EmojiApp"
 
@@ -25,12 +26,15 @@ def main(page: ft.Page):
 
 
     # ---- meus elementos (controls)
+
     # ft.Text -> Elemento textual
     # parametro value deste objeto contém o valor mostrado na tela
-    input = ft.Text(value=EMOJIS[0])
+    # size -> altera o tamanho do texto do elemento
+    input = ft.Text(value=EMOJIS[0], size=30)
 
 
     # ---- função aninhada na main
+
     # Esta é a função que é executada ao clicar em "btn".
     # A função é aninhada à main para que ela consiga acessar as variáveis
     # declaradas na função main (ex. variável input).
@@ -84,4 +88,4 @@ if __name__ == "__main__":
     # ft.app -> dá início a execução do aplicativo
     # target -> aponta para a função que irá manipular a página
     # do app.
-    ft.app(target=main)
+    ft.run(main)
